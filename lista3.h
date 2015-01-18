@@ -34,7 +34,7 @@ public:
 			throw ElementZablkowowany();
 		return tmp;
 	}
-	void dodaj(const T dane, int gdzie){
+	void dodaj(const T & dane, int gdzie){
 		if (gdzie > (rozmiar_+1))
 			throw PrzekroczenieZakresu();
 		Wezel<T>* nowy=new Wezel<T>(dane);

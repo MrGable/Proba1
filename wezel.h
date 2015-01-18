@@ -16,7 +16,7 @@ public:
 	Wezel():nastepny_wezel_(nullptr),poprzedni_wezel_(nullptr),zablokowane_(false),wolny_(true){
 		std::cout << "dupa";
 	}
-	Wezel(const T dane) :nastepny_wezel_(nullptr), poprzedni_wezel_(nullptr),zablokowane_(false),wolny_(false),dane_(dane) {
+	Wezel(const T & dane) :nastepny_wezel_(nullptr), poprzedni_wezel_(nullptr),zablokowane_(false),wolny_(false),dane_(dane) {
 		//dane_ = dane;
 		std::cout << "cycki";
 	}
@@ -33,20 +33,26 @@ public:
 	Wezel* poprzedni(){
 		return poprzedni_wezel_;
 	}
-	T& dane(){
+	T dane()const{
 		return dane_;
 	}
-	void nadaj_wartosc(const T dane){
+	T & dane(){
+		return dane_;
+	}
+	void nadaj_wartosc(const T & dane){
 		dane_ = dane;
 	}
 	void zablokuj(){
 		zablokowane_ = true;
 	}
-	bool czyZablokowany(){
+	bool czyZablokowany()const{
+		/*
 		if (zablokowane_ == true)
 			return true;
 		else
 			return false;
+		*/
+		return zablokowane_; // jednak prosciej, Biedrzy doesn't approve
 	}
 
 };

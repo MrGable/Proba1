@@ -3,6 +3,7 @@
 #include "wezel.h"
 #include "Blad.h"
 #include <iostream>
+// Daniel to gej
 template <typename T>
 class Lista{
 	Wezel<T> *pierwszy_;
